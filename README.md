@@ -17,7 +17,7 @@ public/
 │   ├── projeto.css            Estilo compartilhado dos estudos de produto
 │   ├── analyzai/index.html
 │   ├── vinde/index.html
-│   └── guia-saude/            index.html, screens.css, guia-home.png, guia-busca.png
+│   └── guia-saude/            index.html, screens.css, guia-home.webp, guia-busca.webp
 ├── page.css                   Estilo das páginas internas (sobre, contato, legais)
 ├── site-fixes.css             Ajustes globais + estilo da 404
 ├── home-real.css              Mockup com tela real na home
