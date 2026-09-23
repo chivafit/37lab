@@ -37,5 +37,9 @@ python3 -m http.server -d public 8000
 
 ## Deploy
 
-Cada push na branch principal publica automaticamente na Vercel
-(config em `vercel.json`: sem build, saída em `public/`, URLs com barra final).
+Projeto Vercel: `37lab` (time analyzai), conectado a este repositório.
+
+- Push na `main` → publica em produção automaticamente.
+- Push em outros branches / PRs → gera uma prévia (preview) com URL própria.
+
+Config em `vercel.json`: sem build, saída em `public/`, URLs com barra final.
