@@ -203,3 +203,7 @@ body.case-guia{--a-bg:#EEF5F2;--a-card:#FFFFFF;--a-line:#D9E8E2;--a-ink:#0B1518;
 .g-stat span{display:block;margin-top:8px;color:var(--a-muted);font-size:14px}
 .a-btn{background:var(--a-green);color:#fff}
 @media(max-width:760px){.g-stats-row{grid-template-columns:repeat(2,minmax(0,1fr))}.g-stat{padding:24px 16px}.g-stat:nth-child(3){border-left:0;padding-left:0}.g-stat:nth-child(n+3){border-top:1px solid var(--a-line)}}
+/* As telas enviadas já trazem barra de status e ilha do iPhone: sem notch sobreposto */
+.case-guia .a-device:after,.case-guia .a-phone:after{display:none}
+.case-guia .a-ribbon-track{justify-content:flex-start}
+@media(min-width:1240px){.case-guia .a-ribbon-track{justify-content:center}.case-guia .a-hint{display:none}}
