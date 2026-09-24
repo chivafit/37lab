@@ -59,17 +59,52 @@ body.case-az{--a-bg:#F2F1EC;--a-card:#FFFFFF;--a-line:#E3E1D8;--a-ink:#0F0F11;--
 .a-showcase-caption{margin-top:120px}
 .a-showcase-caption p{font-family:Urbanist,Inter,sans-serif;font-weight:600;font-size:clamp(22px,2.4vw,32px);line-height:1.35;letter-spacing:-.02em;color:#e7e8e2;max-width:860px;margin:0 auto;text-align:center}
 
-/* Fileira de telas */
-.a-ribbon{padding:104px 0 124px;overflow:hidden}
-.a-ribbon-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;width:min(1180px,calc(100% - 56px));margin:60px auto 0;align-items:start}
-.a-screen{margin:0}
-.a-screen:nth-child(even){margin-top:56px}
-.a-screen-img{position:relative;border-radius:30px;overflow:hidden;box-shadow:0 26px 54px rgba(20,20,10,.16),0 0 0 1px rgba(0,0,0,.06);transition:transform .4s ease}
+/* Pilha isométrica com celulares do painel */
+.a-iso.a-iso-phones{width:236px;aspect-ratio:780/1688;margin-top:120px}
+.a-iso-phones .a-iso-layer{transform:translate3d(calc(var(--i) * 24px),calc(var(--i) * -52px),calc(var(--i) * 92px))}
+.a-iso-phones .a-iso-layer img{display:block;width:100%;height:100%;border-radius:30px;box-shadow:0 0 0 1.5px rgba(255,255,255,.6),-28px 36px 54px rgba(0,0,0,.55)}
+
+/* Painel por dentro: grade isométrica */
+.a-panel{position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,rgba(198,243,63,.13),transparent 60%),var(--a-night);padding:104px 0 20px}
+.a-panel .a-title{color:#f5f6f3;max-width:760px}
+.a-panel-stage{height:820px;display:flex;align-items:center;justify-content:center}
+.a-grid{display:grid;grid-template-columns:repeat(3,230px);gap:60px 48px;transform:rotateX(54deg) rotateZ(-38deg);transform-style:preserve-3d}
+.a-tile{transform-style:preserve-3d}
+.a-tile img{display:block;width:100%;height:auto;border-radius:28px;box-shadow:0 0 0 1px rgba(255,255,255,.28),-22px 28px 44px rgba(0,0,0,.5)}
+.a-tile:not(.a-tile-device){opacity:.86}
+.a-tile-device{transform:translateZ(90px)}
+.a-device{position:relative;padding:9px;border-radius:40px;background:linear-gradient(150deg,#3b3b3e,#121214 60%);box-shadow:inset 0 0 0 1.5px #55555a,-34px 44px 70px rgba(0,0,0,.6)}
+.a-device img{display:block;width:100%;height:auto;border-radius:32px;box-shadow:none}
+.a-device:after{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:34%;height:4.2%;background:#121214;border-radius:0 0 14px 14px}
+
+/* Jornadas */
+.a-journeys{padding:110px 0 116px}
+.a-journey{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.a-journey+.a-journey{border-top:1px solid var(--a-line);margin-top:56px;padding-top:72px}
+.a-journey-rev .a-journey-text{order:2}
+.a-num{font-family:Urbanist,Inter,sans-serif;font-weight:800;color:#5b7d12;font-size:16px;letter-spacing:.14em}
+.a-journey .a-title{font-size:clamp(30px,3.2vw,46px);margin:10px 0 18px}
+.a-journey p{font-size:17px;line-height:1.65;color:var(--a-text);max-width:470px;margin:0}
+.a-journey-art{display:flex;justify-content:center}
+.a-pair{position:relative;width:430px;height:560px;perspective:1500px}
+.a-device-sm{position:absolute;width:218px;padding:7px;border-radius:34px;box-shadow:inset 0 0 0 1.5px #55555a,24px 34px 60px rgba(20,20,10,.22)}
+.a-device-sm img{border-radius:27px}
+.a-device-sm:after{top:7px}
+.a-pair .a-device-sm{left:44%;top:6px;transform:rotateY(-16deg) rotateX(5deg) rotateZ(1.5deg);z-index:2}
+.a-pair .a-device-sm.back{left:4%;top:64px;transform:rotateY(-16deg) rotateX(5deg) rotateZ(1.5deg) translateZ(-70px);z-index:1}
+
+/* Módulos: fileira de deslizar */
+.a-ribbon{background:var(--a-night2);padding:104px 0 110px;overflow:hidden}
+.a-ribbon .a-title{color:#f5f6f3}
+.a-ribbon-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.a-hint{color:#8f8f88;font-size:13px;white-space:nowrap;padding-bottom:10px}
+.a-ribbon-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;margin:56px 0 0;padding:0 max(28px,calc((100% - 1120px) / 2)) 18px;scroll-padding:0 max(28px,calc((100% - 1120px) / 2));scrollbar-width:thin;scrollbar-color:#3a3a3c transparent}
+.a-screen{flex:0 0 232px;margin:0;scroll-snap-align:start}
+.a-screen-img{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 26px 54px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.08);transition:transform .4s ease}
 .a-screen:hover .a-screen-img{transform:translateY(-8px)}
-.a-screen-img:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:36%;height:4.4%;background:var(--a-bg);border-radius:0 0 15px 15px;z-index:1}
 .a-screen img{display:block;width:100%;height:auto}
-.a-screen figcaption{margin-top:18px;color:var(--a-muted);font-size:13px;line-height:1.45}
-.a-screen figcaption strong{display:block;color:var(--a-ink);font-family:Urbanist,Inter,sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;margin-bottom:2px}
+.a-screen figcaption{margin-top:16px;color:#a2a29b;font-size:13px;line-height:1.45}
+.a-screen figcaption strong{display:block;color:#f5f6f3;font-family:Urbanist,Inter,sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;margin-bottom:2px}
 
 /* Integrações */
 .a-integrations{background:var(--a-lime);color:var(--a-ink);padding:84px 0}
@@ -92,9 +127,6 @@ body.case-az{--a-bg:#F2F1EC;--a-card:#FFFFFF;--a-line:#E3E1D8;--a-ink:#0F0F11;--
 
 @media(max-width:1100px){
   .a-features{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .a-ribbon-track{grid-template-columns:repeat(3,minmax(0,1fr));width:min(760px,calc(100% - 56px));gap:28px 22px}
-  .a-screen:nth-child(even){margin-top:0}
-  .a-screen:nth-child(3n+2){margin-top:48px}
   .a-iso{width:420px}
 }
 @media(max-width:960px){
@@ -103,10 +135,14 @@ body.case-az{--a-bg:#F2F1EC;--a-card:#FFFFFF;--a-line:#E3E1D8;--a-ink:#0F0F11;--
   .a-intro-grid,.a-integ-row{grid-template-columns:1fr;gap:18px}
   .a-intro-text{padding-top:0}
   .a-steps-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .a-journey,.a-journey-rev{grid-template-columns:1fr;gap:30px}
+  .a-journey-rev .a-journey-text{order:0}
+  .a-panel-stage{height:660px}
+  .a-grid{grid-template-columns:repeat(3,180px);gap:46px 36px}
 }
 @media(max-width:620px){
   .a-hero{padding-bottom:36px}
-  .a-hero-art{height:360px}
+  .a-hero-art{height:430px}
   .a-iso{width:290px;margin-top:30px}
   .a-iso-layer{transform:translate3d(calc(var(--i) * 12px),calc(var(--i) * -44px),calc(var(--i) * 54px))}
   .browser{border-radius:9px;padding-top:16px}.browser .dots{top:5px;left:8px;width:6px;height:6px;box-shadow:9px 0 0 #FEBC2E,18px 0 0 #28C840}
@@ -130,10 +166,24 @@ body.case-az{--a-bg:#F2F1EC;--a-card:#FFFFFF;--a-line:#E3E1D8;--a-ink:#0F0F11;--
   .a-phone-2{width:24%;left:-2%;bottom:-24%}
   .a-showcase-caption{margin-top:90px}
   .a-showcase-caption p{font-size:20px}
-  .a-ribbon-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;gap:14px;width:auto;margin:40px 0 0;padding:0 16px 14px;scrollbar-width:none}
-  .a-ribbon-track::-webkit-scrollbar{display:none}
-  .a-screen{flex:0 0 62%;scroll-snap-align:start;margin-top:0!important}
-  .a-screen-img{border-radius:24px}
+  .a-iso.a-iso-phones{width:170px;margin-top:80px}
+  .a-iso-phones .a-iso-layer{transform:translate3d(calc(var(--i) * 16px),calc(var(--i) * -36px),calc(var(--i) * 62px))}
+  .a-iso-phones .a-iso-layer img{border-radius:22px}
+  .a-panel{padding:72px 0 0}
+  .a-panel-stage{height:480px}
+  .a-grid{grid-template-columns:repeat(3,118px);gap:30px 24px}
+  .a-tile img{border-radius:16px}
+  .a-tile-device{transform:translateZ(54px)}
+  .a-device{padding:5px;border-radius:22px}.a-device img{border-radius:18px}.a-device:after{top:5px}
+  .a-journeys{padding:72px 0}
+  .a-pair{width:100%;max-width:330px;height:430px}
+  .a-device-sm{width:166px;padding:6px;border-radius:27px}.a-device-sm img{border-radius:21px}.a-device-sm:after{top:6px}
+  .a-pair .a-device-sm{left:42%}
+  .a-pair .a-device-sm.back{left:0;top:52px}
+  .a-ribbon{padding:72px 0 76px}
+  .a-ribbon-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .a-ribbon-track{margin-top:36px;gap:14px;padding:0 16px 14px;scroll-padding:0 16px}
+  .a-screen{flex-basis:60%}
   .a-integrations{padding:60px 0}
   .a-chips li{font-size:14px;padding:9px 15px}
   .a-closing{padding:64px 0}
