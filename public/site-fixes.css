@@ -25,4 +25,4 @@ body{overflow-x:hidden}a:focus-visible,button:focus-visible,input:focus-visible,
 
 /* Shared header logo supplied and approved by the user. */
 html a.brand{display:inline-flex;align-items:center;flex-shrink:0;line-height:1;letter-spacing:normal}
-html a.brand .brand-image{display:block;width:auto;height:1em;max-width:none}
+html a.brand .brand-image{display:block;width:clamp(76px,8vw,87px);height:auto;max-width:87px}
