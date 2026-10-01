@@ -21,3 +21,8 @@ body{overflow-x:hidden}a:focus-visible,button:focus-visible,input:focus-visible,
   html .copyright a:after,html .contact-card a:after{inset:-14px -8px}
   html .footer-links{gap:12px 22px}
 }
+
+
+/* Shared header logo supplied and approved by the user. */
+html a.brand{display:inline-flex;align-items:center;flex-shrink:0;line-height:1;letter-spacing:normal}
+html a.brand .brand-image{display:block;width:clamp(76px,8vw,87px);height:auto;max-width:87px}
