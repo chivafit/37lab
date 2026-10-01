@@ -22,7 +22,7 @@ body{overflow-x:hidden}a:focus-visible,button:focus-visible,input:focus-visible,
   html .footer-links{gap:12px 22px}
 }
 
-/* Complete header wordmark while preserving the existing 37 monogram. */
-html a.brand{display:inline-flex;align-items:baseline;gap:.18em;white-space:nowrap;flex-shrink:0;letter-spacing:normal}
-html a.brand .brand-number{letter-spacing:-.14em}
-html a.brand .brand-lab{font-size:.48em;font-weight:600;font-style:normal;letter-spacing:-.04em;line-height:1}
+
+/* Shared header logo supplied and approved by the user. */
+html a.brand{display:inline-flex;align-items:center;flex-shrink:0;line-height:1;letter-spacing:normal}
+html a.brand .brand-image{display:block;width:auto;height:1em;max-width:none}
